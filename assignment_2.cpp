@@ -1,21 +1,19 @@
 #include <iostream>
-#include <string>
-#include <vector>
 using namespace std;
-void allsubstringOcurr(string str,int i,int z,vector<string> ans){
-if (i==z){
-    cout<<str[i]<<endl;
-    ans.push_back(str[i]);
-}
-int j =z;
-if(z==str.size()-1){
 
-    allsubstringOcurr(str,i+1,z,ans)
+int countSubstrings(string s, int i = 0) {
+    if (i == s.size()) return 0;  // base case
+    
+    int count = 0;
+    for (int j = i; j < s.size(); j++) {
+        if (s[i] == s[j]) count++;  // substring starts & ends same
+    }
+
+    return count + countSubstrings(s, i + 1);  // move to next start index
 }
-}
-int main()
-{
+
+int main() {
     string s = "abcab";
-    allsubstringOcurr(s, 0, 1);
+    cout << countSubstrings(s);  // Output: 7
     return 0;
 }
