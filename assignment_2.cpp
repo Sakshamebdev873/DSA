@@ -2,18 +2,18 @@
 using namespace std;
 
 int countSubstrings(string s, int i = 0) {
-    if (i == s.size()) return 0;  // base case
+    if (i == s.size()) return 0;
     
     int count = 0;
     for (int j = i; j < s.size(); j++) {
-        if (s[i] == s[j]) count++;  // substring starts & ends same
+        if (s[i] == s[j]) count++;  
     }
 
-    return count + countSubstrings(s, i + 1);  // move to next start index
+    return count + countSubstrings(s, i + 1); 
 }
 
 int main() {
     string s = "abcab";
-    cout << countSubstrings(s);  // Output: 7
+    cout << countSubstrings(s);  
     return 0;
 }
