@@ -16,6 +16,7 @@ int partition (int arr[],int si,int ei){
 }
 void quickSort(int arr[],int si,int ei){
     if(si>=ei){
+
         return;
     }
     int pivotIdx = partition(arr,si,ei);
