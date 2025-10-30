@@ -35,6 +35,20 @@ public:
             head = newNode;
         }
     };
+    void push_back(int val)
+    {
+        Node *newNode = new Node(val);
+        if (head == NULL)
+        {
+            head = tail = newNode;
+        }
+        else
+        {
+            tail->next = newNode;
+            tail = newNode;
+        }
+    }
+
     void printList()
     {
         Node *temp = head;
@@ -45,15 +59,34 @@ public:
         }
         cout << "NULL" << endl;
     }
+
+    void insertMiddle(int val, int pos)
+    {
+        Node *newNode = new Node(val);
+        Node *temp = head;
+        for (int i = 0; i < pos - 1; i++)
+        {
+            if (temp == NULL)
+            {
+                cout << "Position is invalid. \n";
+                return;
+            }
+            temp = temp->next;
+        }
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
 };
+
 int main()
 {
-// List* ll = new List();
-List ll;
-ll.push_front(20);
-ll.push_front(50);
-ll.push_front(20);
-ll.push_front(40);
-ll.printList();
+    // List* ll = new List();
+    List ll;
+    ll.push_front(20);
+    ll.push_front(50);
+    ll.push_back(90);
+    ll.insertMiddle(30,1);
+    ll.push_front(40);
+    ll.printList();
     return 0;
 }
