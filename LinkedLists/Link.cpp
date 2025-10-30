@@ -48,11 +48,12 @@ public:
 };
 int main()
 {
-List* ll = new List();
-ll->push_front(20);
-ll->push_front(50);
-ll->push_front(20);
-ll->push_front(40);
-ll->printList();
+// List* ll = new List();
+List ll;
+ll.push_front(20);
+ll.push_front(50);
+ll.push_front(20);
+ll.push_front(40);
+ll.printList();
     return 0;
 }
