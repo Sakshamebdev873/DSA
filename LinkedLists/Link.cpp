@@ -10,13 +10,14 @@ public:
         data = val;
         next = NULL;
     }
-    ~Node(){
-        cout<<"~Node"<<data<<endl;
-        if(next!=NULL){
-            delete next;
-            next = NULL;
-        }
-    }
+    // ~Node(){
+    //     cout<<"~Node"<<data<<endl;
+    //     if(next!=NULL){
+    //         delete next;
+    //         next = NULL;
+    //     }
+    // }
+
 };
 class List
 {
@@ -29,13 +30,14 @@ public:
         head = NULL;
         tail = NULL;
     };
-    ~List(){
-        cout<<"destructor of list \n";
-        if(head!=NULL){
-            delete head;
-            head = NULL;
-        }
-    }
+    // ~List(){
+    //     cout<<"destructor of list \n";
+    //     if(head!=NULL){
+    //         delete head;
+    //         head = NULL;
+    //     }
+    // }
+
     void push_front(int val)
     {
         Node *newNode = new Node(val);
@@ -91,7 +93,18 @@ public:
         temp->next = newNode;
     }
 
-    
+    void reverse(){
+        Node* prev =NULL;
+        Node* curr = head;
+        while (curr!=NULL)
+        {
+            Node* next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
 };
 
 int main()
@@ -103,6 +116,8 @@ int main()
     ll.push_back(90);
     ll.insertMiddle(30,1);
     ll.push_front(40);
+    ll.printList();
+    ll.reverse();
     ll.printList();
     return 0;
 }
