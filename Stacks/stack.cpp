@@ -2,33 +2,40 @@
 #include <vector>
 using namespace std;
 
-class Stack {
+class Stack
+{
     vector<int> vec;
 
 public:
-    void push(int val) {
+    void push(int val)
+    {
         vec.push_back(val);
     }
 
-    void pop() {
-        if (isEmpty()) {
+    void pop()
+    {
+        if (isEmpty())
+        {
             cout << "Stack is empty" << endl;
             return;
         }
         vec.pop_back();
     }
 
-    int print() {
+    int print()
+    {
         int lastIdx = vec.size() - 1;
         return vec[lastIdx];
     }
 
-    bool isEmpty() {
+    bool isEmpty()
+    {
         return vec.empty();
     }
 };
 
-int main() {
+int main()
+{
     Stack s;
     s.push(10);
     s.push(12);
@@ -36,7 +43,8 @@ int main() {
     s.push(45);
     s.push(67);
 
-    while (!s.isEmpty()) {
+    while (!s.isEmpty())
+    {
         cout << s.print() << endl;
         s.pop();
     }
