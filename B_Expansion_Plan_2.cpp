@@ -16,13 +16,9 @@ int main()
             if (c == '4') a++;
             else b++;
         }
-
         bool ok = true;
-
-        // Condition 1
+                                                                                                                                        
         if (a + 2*b < x + y) ok = false;
-
-        // Condition 2
         if (a + b < max(x, y)) ok = false;
 
         cout << (ok ? "YES\n" : "NO\n");
