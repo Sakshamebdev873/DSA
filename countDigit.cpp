@@ -4,13 +4,15 @@ int main(){
     int n;
     cin>>n;
     int ans = 0;
-   for(int i=0;i<n;i++){
-    n =  n/10;
-    ans +=1;
-    if(n == 0){
-        break;
+  int temp = n;
+  if(temp == 0){
+    ans = 1;
+  }else{
+    while(temp>0){
+temp =temp/10;
+ans++;
     }
-   }
+  }
    cout<<ans;
     return 0;
 }
