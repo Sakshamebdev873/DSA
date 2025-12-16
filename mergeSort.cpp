@@ -10,7 +10,7 @@ void merge(int arr[], int si, int mid, int ei)
     {
         if (arr[i] <= arr[j])
         {
-            temp.push_back(arr[i++]);
+            temp.push_back(arr[i++]);// can be written as   temp.push_back(arr[i]) and i++
         }
         else
         {
