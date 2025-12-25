@@ -10,8 +10,13 @@ int main()
         {
 
             ans = arr[i - 1];
+            break;
         }
     }
-    cout << ans + 1 << endl;
+    if(ans>0){
+        cout << ans + 1 << endl;
+    }else{
+        cout <<"no missing number found"<< endl;
+    }
     return 0;
 }
